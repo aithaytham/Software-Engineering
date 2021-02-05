@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="words">
+	    <item>chargeur</item>
+	    <item>ordinateur</item>
+	    <item>tablete</item>
+	    <item>systeme</item>
+	    <item>application</item>
+	    <item>internet</item>
+	    <item>stylot</item>
+	    <item>android</item>
+	    <item>clavier</item>
+	    <item>smartphone</item>
+	    <item>isep</item>
+	    <item>ingenieur</item>
+	    <item>tornade</item>
+	    <item>television</item>
+	    <item>binaire</item>
+	    <item>developpeur</item>
+	    <item>top</item>
+	    <item>genial</item>
+	    <item>souris</item>
+	    <item>basket</item>
+	    <item>cigarette</item>
+	    <item>trousse</item>
+	    <item>gateau</item>
+	    <item>serpent</item>
+	    <item>singe</item>
+	    <item>rouge</item>
+	    <item>fantome</item>
+	    <item>interview</item>
+	    <item>index</item>
+	    <item>parametre</item>
+	    <item>objet</item>
+	    <item>orienter</item>
+	    <item>propre</item>
+	    <item>tag</item>
+	    <item>jeu</item>
+	    <item>dormir</item>
+	    <item>mediter</item>
+	    <item>accompli</item>
+	    <item>interne</item>
+	    <item>globale</item>
+  </string-array>
+    
+</resources>

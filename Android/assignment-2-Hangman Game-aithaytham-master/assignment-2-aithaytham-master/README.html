@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="assignment-2-hangman-game">Assignment 2: Hangman Game</h1>
+<p>The first assignment was all about getting to know some basic widgets better. Now, this assignment will ask you to manipulate a bit more Buttons and TextViews. This assignment will also be a <strong>little bit</strong> more challenging because the logic is also more complex.</p>
+<h2 id="description-of-the-app">Description of the App</h2>
+<p>In this assignment, you will mainly manipulate Buttons to implement the Hangman Game. This game will proceed as follows:</p>
+<ol type="1">
+<li>When launched, the application will read a word in a static file (or in a string-array). This will be the word to find.</li>
+<li>At the start of the game, <strong>no letter is shown</strong>.</li>
+<li>The player will have to press Buttons representing each letter in the alphabet to guess the word. The player is allowed <strong>10 wrong attempts</strong>.</li>
+<li>If the letter is present in the hidden word:
+<ol type="1">
+<li>Display <strong>all occurrences</strong> of this letter;</li>
+<li>The background color of the Button also turns to green;</li>
+</ol></li>
+<li>The Button is disabled (it is not clickable anymore).</li>
+<li>If the letter is not present in the hidden word:</li>
+<li>The player lost a “life”;</li>
+<li>The background color of the Button turns to red;</li>
+<li>The Button is disabled (it is not clickable anymore).</li>
+<li>If the player finds the word before getting 10 wrong attempts, display a message to congratulate him/her.</li>
+<li>If the player gets 10 wrong attempts, the game is over.</li>
+<li>After step 6 or 7, display a hidden Button to restart the game in the same Activity.</li>
+</ol>
+<p>You can base the design of your app on the figure displayed in the lecture slides.</p>
+<h2 id="detailed-specifications">Detailed specifications</h2>
+<p>The following points must be implemented in your app:</p>
+<ol type="1">
+<li>Your application must store a list of static words in either a file or in the <code>res</code> folder;</li>
+<li>Your application must <strong>randomly</strong> choose a word in this list;</li>
+<li>Your application must display the number of wrong attempts left;</li>
+<li>Your application must display <strong>all occurrences</strong> of a letter present in the word;</li>
+<li>The clicked Buttons must change background and be disabled to prevent further unintentionnal clicks.</li>
+<li>When a round is over, display a Button to restart the game with a new word.</li>
+</ol>
+<h2 id="deadline-for-submission">Deadline for submission</h2>
+<p>Deadline: October 8, 2019 23:59.</p>
+<p>Lateness policy applies if still available. Issues with configuring the IDE or working with Git/GitHub will not warrant any deadline extension anymore.</p>
+</body>
+</html>
