@@ -1,0 +1,43 @@
+body {
+    font-family: sans-serif;
+    font-size: large;
+    background-color: red;
+    color: white;
+}
+
+#monconteneur {
+    background-color: white;
+    width: 80%;
+    border: solid;
+    border-color: green;
+    border-radius: 50px;
+    margin: 10%;
+    padding: 2%;
+}
+
+.monconteneur2 {
+    background-color: black;
+    float: left;
+
+}
+
+#monconteneur p {
+    color: green;
+}
+
+.monconteneur2:hover {
+    background-color: blue;
+    color: white;
+}
+
+a:visited {
+    color: blue;
+}
+
+#para {
+    float: right;
+}
+
+table {
+    border: solid;
+}

@@ -1,0 +1,78 @@
+@import '../../style/circle.scss';
+
+.card {
+  height: 300px;
+  width: 1100px;
+  background-color: #F6F6F6;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15) ;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.list-month {
+  @include on-circle( $item-count: 12, $circle-size: 300px, $item-size: 30px, $rotStart: 0);
+  position: absolute;
+  // border: solid 2px black;
+  box-sizing: border-box;
+  margin: 0;
+  left: -150px;
+  display: flex;
+  align-items: center;
+
+  .month {
+    display: flex;
+    border-radius: 10px;
+    width: 100px;
+    filter: grayscale(100%);
+    //background-color: white;
+    transition: .5s;
+
+    &:hover,
+    &:active{
+      filter: grayscale(0);
+
+    }
+  }
+}
+
+.list-month.janvier {
+  @include on-circle( $item-count: 12, $circle-size: 300px, $item-size: 30px, $rotStart: -0);
+}
+.list-month.fevrier {
+  @include on-circle( $item-count: 12, $circle-size: 300px, $item-size: 30px, $rotStart: -30);
+}
+.list-month.mars {
+  @include on-circle( $item-count: 12, $circle-size: 300px, $item-size: 30px, $rotStart: -60);
+}
+.list-month.avril {
+  @include on-circle( $item-count: 12, $circle-size: 300px, $item-size: 30px, $rotStart: -90);
+}
+.list-month.mai {
+  @include on-circle( $item-count: 12, $circle-size: 300px, $item-size: 30px, $rotStart: -120);
+}
+.list-month.juin {
+  @include on-circle( $item-count: 12, $circle-size: 300px, $item-size: 30px, $rotStart: -150);
+}
+.list-month.juillet {
+  @include on-circle( $item-count: 12, $circle-size: 300px, $item-size: 30px, $rotStart: -180);
+}
+.list-month.aout {
+  @include on-circle( $item-count: 12, $circle-size: 300px, $item-size: 30px, $rotStart: 150);
+}
+.list-month.septembre {
+  @include on-circle( $item-count: 12, $circle-size: 300px, $item-size: 30px, $rotStart: 120);
+}
+.list-month.octobre {
+  @include on-circle( $item-count: 12, $circle-size: 300px, $item-size: 30px, $rotStart: 90);
+}
+.list-month.novembre {
+  @include on-circle( $item-count: 12, $circle-size: 300px, $item-size: 30px, $rotStart: 60);
+}
+.list-month.decembre {
+  @include on-circle( $item-count: 12, $circle-size: 300px, $item-size: 30px, $rotStart: 30);
+}
+
+
+

@@ -1,0 +1,32 @@
+.user-container {
+    text-align: left;
+}
+
+.global {
+    display: flex;
+    text-align: center;
+    padding-right: 2%;
+    color: black;
+}
+
+.item:nth-child(1) {
+    float: left;
+    width: 20%;
+    border: solid;
+    border-color: grey;
+    margin-right: 2%;
+}
+
+.item {
+    font-size: smaller;
+    overflow: auto;
+    width: 20%;
+    border: solid;
+    border-color: grey;
+    margin-right: 2%;
+
+}
+
+.item:hover {
+   box-shadow: 6px 6px 6px black;
+}

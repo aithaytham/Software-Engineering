@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "828914207087",
+    "firebase_url": "https://plong-isep.firebaseio.com",
+    "project_id": "plong-isep",
+    "storage_bucket": "plong-isep.appspot.com"
+
+  },
+  "client": [
+    {
+      "client_info": {
+
+        "mobilesdk_app_id": "1:828914207087:android:caa632542817d32c60c09a",
+
+        "android_client_info": {
+          "package_name": "com.example.projetand"
+        }
+      },
+      "oauth_client": [
+        {
+
+          "client_id": "828914207087-mmstclfacb3c30nh18jqki8ns8ojesgb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.projetand",
+            "certificate_hash": "b896f8cf52d7d563cd85d06e959046393f6cfcb7"
+          }
+        },
+        {
+          "client_id": "828914207087-mili43kjrvrkc4p5d9chse23ta94ho7m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKvaJjNiaos0zxfx2j9NXxYFT6EY_K5ug"
+
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+
+              "client_id": "828914207087-mili43kjrvrkc4p5d9chse23ta94ho7m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

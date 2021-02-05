@@ -1,0 +1,168 @@
+body {
+    font-family: sans-serif;
+    font-size: large;
+    background-image: url("/Domisep/Vues/assets/images/fond.jpg");
+    margin-left: 20%;
+    overflow: auto;
+}
+
+a {
+    color: black;
+}
+h1{
+	color :#3498db  ; 
+}
+a:visited{
+    color: black;
+}
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    padding-right: 10%;
+}
+
+#logo {
+    border: solid;
+    border-radius: 7px;
+    border-color: white;
+    margin-bottom: -1%
+}
+
+.menu {
+    background-color: #1e88e5;
+    box-shadow: 0px 0px 10px black;
+    width: 100%;
+    position: absolute;
+    left:0%;
+    top: 0%;
+    font-size: large;
+    text-align: left;
+}
+
+.menu-container {
+    width: 100%;
+    position: relative;
+    left: 20%;
+    padding: 1% 0% 1% 0%;
+}
+
+.container {
+    position: absolute;
+    top: 15%;
+    margin-left: 10%;
+    margin-right: auto;
+    width: 40%;
+    text-align: center;
+}
+
+.form-container {
+    display: inline;
+    width: 100%;
+
+}
+
+.login {
+   display: block;
+   text-align: center;
+    background-color: #2c3e50;
+}
+
+#submitbutton {
+    background-color: #e67e22;
+    color: #34495e;
+    border-color: black;
+    border: thin;
+    border-radius: 30px;
+    padding: 2%;
+    width: 40%;
+    font-size: large;
+}
+
+#submitbutton:hover {
+    background-color: #3498db;
+    color: #34495e;
+    border-color: #0d47a1;
+    border: solid;
+}
+
+.input-text {
+    width: 39%;
+    height: 3em;
+}
+
+textarea {
+    width: 81%;
+    height: 6em;
+    font-size: large;
+}
+
+#img-text {
+    overflow: auto;
+}
+
+#image {
+    float: left;
+    width: 50%;
+}
+
+#texte {
+    overflow: auto;
+}
+
+#image {
+    width: 50%;
+}
+
+#discover {
+    background-color: black;
+    color: white;
+    border-color: black;
+    border: thin;
+    border-radius: 30px;
+    padding: 2%;
+    width: 100px;
+    font-size: large;
+    position: relative ;
+    top: 10%;
+    left: 25%;
+    text-decoration: none;
+}
+
+#discover:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+    border: solid;
+}
+
+footer {
+    background-color: gray;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    padding-left: 20%;
+    color: white;
+    height: 13%;
+    margin-top: 10%;
+}
+
+footer p {
+    margin-bottom: -1%;
+}
+
+.select-room-button {
+    width: 100%;
+}
+
+

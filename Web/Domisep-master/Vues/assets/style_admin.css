@@ -1,0 +1,241 @@
+@font-face {
+    font-family: Roboto;
+    src: url(Roboto-Regular.ttf);
+}
+
+h2 {
+    color: gray;
+}
+
+textarea:focus, input:focus, button:focus{
+    outline: none;
+}
+
+body{
+  background-color: #34495e;
+  margin: 0;
+}
+
+form {
+    text-align: center;
+}
+
+.input {
+    border: none;
+    font-size: large;
+    border-bottom: solid 2px gray;
+    width: 30%;
+    margin-bottom: 2%;
+    transition-property: all;
+    transition-duration: 0.1s;
+}
+
+.input:focus {
+    border-bottom: solid 3px #3498db;
+    font-size: larger;
+    text-align: right;
+}
+
+
+.input_select {
+    border: none;
+    font-size: large;
+    border-bottom: solid 2px gray;
+    width: 30%;
+    margin-bottom: 2%;
+    background-color: white;
+    color: grey;
+}
+
+.input_select:focus {
+    border-bottom: solid 3px #3498db;
+    font-size: larger;
+}
+
+.submit {
+    text-align: center;
+    width: 15vw;
+    height: 3vw;
+    background-color: #3498db;
+    border: solid 2px #3498db;
+    border-radius: 15px;
+    margin-top: 3%;
+    color: white;
+    font-weight: bold;
+    font-size: 2vw;
+    padding: 5px;
+}
+
+.submit:hover{
+    background-color: white;
+    color: #3498db;
+    border-color: #3498db;
+}
+
+.list_create{
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 5vw;
+}
+
+.session{
+  background-color: #3498db;
+  height: 25vw;
+  width: 20vw;
+  min-width: 150px;
+  min-height: 150px;
+  margin: 5% 1%;
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  transition: 0.5s;
+  cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+
+.session:hover {
+    background-color: white;
+}
+
+
+.last .list_password{
+  margin-top: 3vw;
+}
+
+.selected{
+  background-color: white;
+  opacity: 1;
+}
+
+
+.img_plus{
+  font-size: 10vw;
+  color: #2c3e50;
+  text-shadow: 0 0 10px #2c3e50;
+  height: 8vw;
+  width: 8vw;
+  text-align: center;
+  border-radius: 50%;
+  margin-bottom: 0vw;
+}
+
+.active{
+  background-color: #3498db;
+  border: 2px solid #2980b9;
+  transition: 0.5s;
+}
+
+.picture{
+  border-radius: 50%;
+  height: 10vw;
+  width: 10vw;
+  margin-top: 3vw;
+  pointer-events: none;
+}
+
+.nom_session{
+  margin-top: 1vw;
+  font-size: 2vw;
+  font-family: Roboto;
+  color: #34495e;
+  pointer-events: none;
+}
+
+.list_password{
+  list-style: none;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+}
+
+
+
+
+#answerTicket{
+  padding: 0;
+  list-style: none;
+  height: 6%;
+  margin-top: 15%;
+
+}
+
+.button {
+    cursor:pointer;
+    background-color: #3498db;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1vw;
+    margin:20% 0%;
+    display: block;
+    width: 10vw;
+    border-radius:20px;
+    height: 3vw;
+    font-family: Roboto;
+    color:  white;
+    font-weight: bold;
+}
+
+.button:hover {
+    color: #3498db;
+    background-color: white;
+    border:solid 2px #3498db;
+}
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    background-color: white;
+}
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+in
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}

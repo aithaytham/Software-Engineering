@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_inscription"
+                android:icon="@drawable/login"
+                android:title="@string/inscription"/>
+        <item
+                android:id="@+id/nav_recherche"
+                android:icon="@drawable/ic_search_black_24dp"
+                android:title="Recherche"/>
+        <item
+                android:id="@+id/nav_camera"
+                android:icon="@drawable/mon_compte"
+                android:title="Mon compte"/>
+
+        <item
+                android:id="@+id/nav_gallery"
+                android:icon="@drawable/club"
+                android:title="Club"/>
+        <item
+                android:id="@+id/nav_slideshow"
+                android:icon="@drawable/sites"
+                android:title="Sites"/>
+        <item
+                android:id="@+id/nav_manage"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Contact"/>
+
+    </group>
+
+
+
+</menu>

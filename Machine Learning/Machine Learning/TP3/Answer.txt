@@ -1,0 +1,4 @@
+1.	our data is not inoff , we can expect overfitting. The proof overfitting is happening is that the validation accuracy is over the training accuracy.
+2.	Adding some epochs would not help solve the problem. To solve it, we should add some data,to find a model more simple or use regularization.
+
+3.	We can also change the parameter optimizer and we can set it to Adam or GradientDescent instead of RMSPropOptimizer or change the loss parameter to mean_squarred_error instead of binary_entropy. But generally, binary_crossentropy is well adapted for binary classification so we would rather change the optimizer parameter.

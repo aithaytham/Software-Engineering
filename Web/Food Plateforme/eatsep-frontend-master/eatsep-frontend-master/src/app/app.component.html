@@ -1,0 +1,24 @@
+<!-- <mat-tab-group>
+  <nav mat-tab-nav-bar *ngFor="let page of pages" >
+    <ng-template mat-tab-label >
+      <div ngClass="tab-label">
+        <mat-icon class="example-tab-icon">{{page.icon}}</mat-icon>
+        <span>{{page.tilte}}</span>
+      </div>
+    </ng-template>
+  </nav>
+
+</mat-tab-group> -->
+
+
+<router-outlet></router-outlet>
+<div ngClass="navbar">
+  <nav mat-tab-nav-bar >
+    <a mat-tab-link *ngFor="let link of pages" [routerLink]="link.link" fxLayout="column" fxFlex=33.33
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive">
+    <mat-icon class="example-tab-icon">{{link.icon}}</mat-icon>
+    <span ngClass="tab-label">{{link.tilte | uppercase}}</span>
+    </a>
+  </nav>
+</div>

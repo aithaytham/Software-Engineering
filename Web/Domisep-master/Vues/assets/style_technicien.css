@@ -1,0 +1,264 @@
+body{
+    background-color:#34495e ;
+    color: #bdc3c7;
+    margin-top: 7%;
+}
+
+
+#listFilter{
+  width: 15%;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  margin-left: 5%;
+}
+
+.filter{
+  height: 3vw;
+  width: 3vw;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.filter.active{
+  opacity: 1;
+}
+
+#filter1{
+  background-color: antiquewhite;
+}
+#filter2{
+  background-color: #e67e22; ;
+}
+#filter3{
+  background-color: #2ecc71;
+}
+
+#listTickets{
+  margin-top: 4%;
+  list-style: none;
+  padding-left: 0;
+}
+
+.descriptionTicket{
+  height: 35vh;
+}
+.descriptionTicket{
+  background-color: #3498db;
+  width: 100%;
+}
+
+#entete{
+  width: 100%;
+  height: 5%;
+  border: 2px solid #34495e ;
+  text-align: center;
+}
+
+.alignerGauche{
+    text-align: left;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 2vw;
+    color:rgba(255,255,255,0.7);
+
+
+}
+#commentaireTicket{
+  width: auto;
+  background-color: rgba(0,0,0,0);
+  margin-top: 5%;
+  border-radius: 10px;
+  overflow:auto;
+  font-size: 18px;
+  color:rgba(255,255,255,0.7);
+  text-align: justify;
+}
+
+
+#answerTicket{
+  padding: 0;
+  display:flex;
+  justify-content: center;
+  list-style: none;
+  height: 6%;
+  margin-top: 3%;
+
+
+}
+
+.button {
+    background-color:white;
+    color:  #3498db;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 27%;
+    padding: 20px 50px;
+    border-radius:20px;
+    border: solid;
+    border-color: white;
+    font-size: larger;
+    margin-right: 20%;
+}
+
+.button:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.buttonclose {
+    background-color:white;
+    color:  #3498db;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 27%;
+    padding: 20px 50px;
+    border-radius:20px;
+    border: solid;
+    border-color: white;
+    font-size: larger;
+    margin-right: 20%;
+}
+
+.buttonclose:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.buttonbis {
+    background-color: #3498db;
+    color: white;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 20px 100px;
+    border-radius:20px;
+    border: solid;
+    border-color: #3498db;
+    margin-left: 38%;
+    margin-top: 2%;
+}
+
+.buttonbis:hover {
+    background-color:transparent;
+    color:  #3498db;
+}
+
+.liTicket{
+  width:85%;
+  margin: auto;
+  background-color: #3498db;
+  border-radius: 15px;
+}
+
+.ticket{
+    padding: 1vw;
+    height:10%;
+    display:flex;
+    justify-content: space-between;
+    background-color: #3498db;
+    border-bottom: 2px solid rgba(0,0,0,0.2) ;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-top: 3vw;
+
+   align-items: center;
+   pointer-events: none;
+}
+
+.id{
+    width: 10%;
+    border-right: 2px rgba(255,255,255,0.2) solid ;
+    font-size: 3vw;
+    color: white;
+    text-align: center;
+    pointer-events: none;
+}
+.object{
+    width: 80%;
+    text-align: left;
+    padding-left: 3%;
+    font-size: 2vw;
+    display: flex;
+    text-align: left;
+    color: rgba(255,255,255,0.7);
+    pointer-events: none;
+}
+
+.statecontainer{
+    width: 10%;
+    text-align: center;
+    pointer-events: none;
+}
+
+
+.state {
+   width:3vw;
+    height: 3vw;
+   border-radius: 50%;
+}
+.new{
+    background-color: antiquewhite;
+}
+
+.viewed{
+    background-color: #e67e22;
+}
+
+.done{
+    background-color: #2ecc71;
+}
+
+#response{
+    margin-top: 3%;
+    margin-left: 11%;
+    font-family: sans-serif;
+}
+
+#response:focus{
+    border: 2px solid #3498db;
+    box-shadow: 0 0 5px #3498db;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -1,0 +1,57 @@
+@font-face {
+    font-family: Roboto;
+    src: url(Roboto-Regular.ttf);
+}
+
+textarea:focus, input:focus, select:focus{
+    outline: none;
+}
+
+body{
+  background-color: #34495e;
+  margin: 0;
+  font-family: Roboto;
+}
+
+.list{
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  background-color: #3498db;
+  height: 7%;
+  justify-content: center;
+}
+
+.list:hover {
+  color: #e67e22;
+}
+
+.link{
+  margin: 0 3vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  font-size: 1vw;
+}
+
+.link a {
+  text-decoration: none;
+  color: white;
+}
+
+
+.error {
+  color: #e67e22;
+  font-size: 1.5vw;
+  text-shadow: 0 0 10px #34495e;
+  position: absolute;
+  top: 20%;
+  margin-left: 37%;
+}

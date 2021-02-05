@@ -1,0 +1,37 @@
+.dish-card {
+    width: 125px;
+    //height: 125px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 12px #aaa;
+    margin: 10px;
+}
+
+.cropped-img {
+    margin-top: 0;
+    position: absolute;
+    z-index: -1;
+    width: 125px; /* width of container */
+    height: 100px; /* height of container */
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+.dish-name {
+    //margin-top: 80px;
+    padding: 4px;
+}
+
+.dish-price {
+    //position: absolute;
+    //z-index: 1;
+    text-align: center;
+    border-radius: 5px 0 0 0;
+    width: 50px;
+    padding: 2px;
+    margin-top: 83px;
+    margin-left: 71px;
+    font-size: 13px;
+    //color: $color-primary;
+    font-weight: bold;
+    background: white;
+}

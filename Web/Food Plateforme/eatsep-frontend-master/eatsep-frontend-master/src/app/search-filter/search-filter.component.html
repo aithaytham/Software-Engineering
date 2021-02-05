@@ -1,0 +1,7 @@
+<div ngClass="dispatcher-around container-cat">
+  <div *ngFor="let cat of categories" >
+    <img *ngIf="cat.isActive" ngClass="icon-cat" src="{{cat.srcUrlTrue}}" (click)="this.toggleIcon(cat)">
+    <img *ngIf="!cat.isActive" ngClass="icon-cat" src="{{cat.srcUrlFalse}}" (click)="this.toggleIcon(cat)">
+    <span ngClass="label-cat" >{{cat.titre}}</span>
+  </div>
+</div>

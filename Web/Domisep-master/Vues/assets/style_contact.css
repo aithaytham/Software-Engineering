@@ -1,0 +1,172 @@
+body {
+    background-color: #34495e;
+    margin-left: 20%;
+    overflow: auto;
+    color: white;
+}
+
+.title{
+    text-align: center;
+    width: 100%;
+    margin: 2vw 0;
+    font-size: 3vw;
+    text-shadow: 0 0 1px #3498db;
+    color: #3498db;
+}
+
+.container {
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    width: 60%;
+    text-align: left;
+}
+
+.form-container {
+    display: inline;
+    width: 100%;
+}
+
+#submitbutton {
+    background-color: #e67e22;
+    color: white;
+    border-color: black;
+    border: thin;
+    box-shadow: 3px 3px 15px black;
+    border-radius: 30px;
+    padding: 2%;
+    width: 40%;
+    font-size: large;
+}
+
+#submitbutton:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+    border: solid;
+    cursor: pointer;
+}
+
+#submitbutton {
+    background-color: white;
+    border: solid;
+}
+
+.input-text {
+    width: 39%;
+    height: 3em;
+    background-color: #34495e;
+    border: 2px solid #3498db;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1vw;
+    color: white;
+    font-weight: bold;
+}
+
+.input-text:focus{
+    border: 2px solid white;
+    box-shadow: 0 0 10px white;
+}
+
+textarea {
+    width: 81%;
+    height: 6em;
+    background-color: #34495e;
+    border: 2px solid #3498db;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1vw;
+    color: white;
+    font-weight: bold;
+}
+
+textarea:focus{
+    border: 2px solid white;
+    box-shadow: 0 0 10px white;
+}
+
+.submit{
+    text-align: center;
+    width: 15vw;
+    height: 3vw;
+    background-color: #3498db;
+    border: solid 2px #3498db;
+    border-radius: 15px;
+    margin-left: 43%;
+    color: white;
+    font-weight: bold;
+    font-size: 2vw;
+    padding: 5px;
+}
+
+.submit:hover{
+    background-color: white;
+    color: #3498db;
+    border-color: #3498db;
+}
+
+b{
+    color: #3498db;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.buttonbis {
+    background-color: #3498db;
+    color: white;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 20px 100px;
+    border-radius:20px;
+    border: solid;
+    border-color: #3498db;
+    margin-left: 38%;
+    margin-top: 2%;
+}
+
+.buttonbis:hover {
+    background-color:transparent;
+    color:  #3498db;
+}
+
+

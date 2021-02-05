@@ -1,0 +1,43 @@
+
+@media (min-width: 0px) {
+  .icon-cat {
+     width: 30px;
+     height: 30px;
+  }
+  .container-cat {
+    max-width: 400px;
+  }
+}
+@media (min-width: 992px) {
+  .icon-cat {
+     width: 50px;
+     height: 50px;
+  }
+  .container-cat {
+    max-width: 600px;
+  }
+}
+
+.container-cat {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categorie {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+//.icon-cat {
+//  width: 90px;
+//  height: 90px;
+//}
+
+.label-cat {
+  color: #D0D0D0;
+  font-weight: 200;
+  padding-top: 5px;
+}

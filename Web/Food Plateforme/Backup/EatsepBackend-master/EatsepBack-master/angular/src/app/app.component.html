@@ -1,0 +1,39 @@
+<h1>
+  EATSEP
+</h1>
+<form (ngSubmit)="createDish()" #dishForm="ngForm" class="form-inline dish-form">
+  <div class="col-lg-3">
+  </div>
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input name="new-dish" [(ngModel)]="newDish.title" type="text" class="form-control" placeholder="Dish name" required autocomplete="off">
+      <span class="input-group-btn">
+       <button type="submit" class="btn btn-primary" [disabled]="!dishForm.valid || requesting"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+       </span>
+    </div>
+  </div>
+  <div class="col-lg-3">
+  </div>
+</form>
+
+<div *ngFor="let dish of Dishs; let i = index" class="dish">
+  <button class="btn btn-danger btn-sm" style="margin:7px;float:right;" (click)="deleteDish(dish)" [disabled]="requesting"><i class="fa fa-trash" aria-hidden="true"></i></button>
+  <p class="dish-title">{{dish.title}}</p>
+  <form (ngSubmit)="createUser(User)" #userForm="ngForm" class="form-inline user-form">
+    <div class="col-lg-12">
+      <div class="input-group">
+        <input name="new-user-{{i}}" [(ngModel)]="dish.taskContent" type="text" class="form-control" placeholder="User name" required autocomplete="off">
+        <span class="input-group-btn">
+       <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid || requesting"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+       </span>
+      </div>
+    </div>
+  </form>
+  <div class="col-lg-12">
+    <div class="user">
+      <input type="checkbox" [checked]="User.active" (change)="updateDish(dish)">
+      <span [ngClass]="{'user-text': User.active}">{{User.name}}</span>
+      <button class="btn btn-sm btn-danger" (click)="deleteUser(User)" type="button" style="float:right;" [disabled]="requesting"><i class="fa fa-minus-square" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</div>

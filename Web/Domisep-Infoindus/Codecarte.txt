@@ -1,0 +1,342 @@
+
+#define  	  SIZE_ENVOI	17
+#define  	  SIZE_RECEP	15
+#define MOT1 7
+#define MOT2 26
+#define   	  Light   	  24
+#define POT 28
+#define   	  CAP   	  25
+#define   	  LUM   	  5
+#define       FILTRE      99  // EDOUARD A CHANGER , ici c'est le pin -----------------------------------------------------------------------------------------------
+#define       LIMFILTRE  3000// Ici c'est le seuil de detection du filtre en volt -----------------------------------------------------------------------------------
+
+#define seuilBas  		  3000
+#define seuilHaut 		  4000
+
+#define LED1  		  2
+#define LED2  		  34
+#define LED3  		  35
+#define LED4  		  36
+#define LED5  		  37
+
+
+
+char	Conv_hexToAsc(char digH);	// définition de la fonction de ...
+                      			  // conversion d'un chiffre hexa en code ASCII
+void	Envoi_Trame(int valcapt);	// définition de la fonction d'envoi ...
+                      			  // d'une trame
+
+char	TrameEnvoi[20];  	  // buffer pour envoyer  une trame vers la passerelle
+char	TrameRecep[20];  	  // buffer pour recevoir une trame venant de la passerelle
+char	CheckSum;
+int dev;
+int alpha2;
+String  frame;
+
+void setup()
+{
+  Serial.begin(9600);
+  Serial1.begin(9600);
+
+	// put your setup code here, to run once:
+
+	// Partie constante de la trame
+	TrameEnvoi[0] = '1';	// le champ TRA. choisir toujours "Trame courante = 1"
+	TrameEnvoi[1] = '0';	// le champ OBJ (4 octets) = numero de groupe. ex 001A
+	TrameEnvoi[2] = '0';	//
+	TrameEnvoi[3] = '2';	//
+	TrameEnvoi[4] = 'A';	//
+	TrameEnvoi[5] = '1';	// champ REQ. 1= Requete en ecriture
+//	TrameEnvoi[6] = ;  	  // champ TYP. remplir dans la boucle (voir Doc)
+	TrameEnvoi[7] = '0';	// champ NUM (2 octets). Numero du capteur
+	TrameEnvoi[8] = '1';	// On choisit par exemple le numero 01.
+//	TrameEnvoi[ 9] = ;  	  // Champ VAL (4 octets) = valeur à envoyer au site web
+//	TrameEnvoi[10] = ;  	  // par exemple la valeur du capteur de lumiere
+//	TrameEnvoi[11] = ;
+//	TrpameEnvoi[12] = ;
+	TrameEnvoi[13] = 'M';	// Champ TIM (4 octets) = heure d'envoi de la trame
+	TrameEnvoi[14] = 'A';	// Ce champ n'est pas utilisé par la passerelle; donc
+	TrameEnvoi[15] = 'R';	// on peut mettre la valeur qu'on veut
+	TrameEnvoi[16] = 'O';
+//	TrameEnvoi[17] = ;  	  // premier  chiffre (poid fort)   du checksum
+//	TrameEnvoi[18] = ;  	  // deuxieme chiffre (poid faible) du checksum
+  	  pinMode(MOT1, OUTPUT);
+  	  pinMode(MOT2, OUTPUT);
+  	  pinMode(LED1, OUTPUT);
+  	  pinMode(LED2, OUTPUT);
+  	  pinMode(LED3, OUTPUT);
+  	  pinMode(LED4, OUTPUT);
+  	  pinMode(LED5, OUTPUT);
+  	  pinMode(Light, INPUT);
+  	  digitalWrite(MOT1, LOW);
+   	  digitalWrite(MOT2, LOW);
+  	  dev=0;
+    
+      
+      
+
+}
+
+void loop()
+{
+	int n, valcapt, lux;  	  // valeur lue du capteur
+
+   	  //int valeur = analogRead(LUM);
+	  
+	  int valeur2 = analogRead(FILTRE);
+   	  int valeur = analogRead(CAP);
+   	  Serial.println(valeur);
+      Serial.println(valeur2);  
+  	 
+
+	if(dev==1){ //Verification du code
+
+	TrameEnvoi[6] = 0x35;	// champ TYP. 0x35 = envoi de la valeur du capteur de lumiere
+	valcapt = valeur;
+	// lire ici le capteur et mettre la valeur dans la variable valcapt
+    
+	Envoi_Trame(valcapt);
+	Recep_Trame();
+    
+	Analyse_Trame(valcapt);
+	if(valcapt > 1000){
+  	digitalWrite(MOT1,LOW);//on alimente le port défini en 33
+   	digitalWrite(MOT2,LOW);
+  	}
+	if(valcapt < 1000){  	 
+    	if(alpha2==5){
+
+   	digitalWrite(MOT1,HIGH);//on alimente le port défini en 33
+   	digitalWrite(MOT2,LOW);}
+  	}
+  	if(valcapt < 1000){
+      	if(alpha2==6){
+
+   	digitalWrite(MOT1,LOW);//on alimente le port défini en 33
+   	digitalWrite(MOT2,HIGH);}
+  	}
+	filtretest(valeur2);
+	delay(2000);
+  }
+   
+   else {
+
+  	Envoi_Trame(0x35);
+  	Recep_Trame();
+  	dev=Deverouillage_Trame();
+	filtretest(valeur2);
+  	delay(2000);   
+
+   }
+   
+
+   
+   
+  	 
+  	 
+}
+
+
+//---------------------------------
+void	Envoi_Trame(int valcapt)
+//---------------------------------
+{	int n;	char digH, digA;	// digit (4 bits) Hexa et Ascii
+
+	// convertir la valeur du capteur en 4 chiffres ASCII (poid fort en premier)
+	// conversion du 1er chiffre (poid fort)
+	digH = (valcapt >> 12) & 0x0F;	// >> signifie décalage de 12 bits vers la droite
+	digA = Conv_hexToAsc(digH);
+	TrameEnvoi[9] = digA;
+	// conversion du 2e chiffre
+	digH = (valcapt >> 8) & 0x0F;	// décalage de 8 bits vers la droite
+	digA = Conv_hexToAsc(digH);
+	TrameEnvoi[10] = digA;
+	// conversion du 3e chiffre
+	digH = (valcapt >> 4) & 0x0F;	// décalage de 4 bits vers la droite
+	digA = Conv_hexToAsc(digH);
+	TrameEnvoi[11] = digA;
+	// conversion du 4e chiffre (poid faible)
+	digH = valcapt & 0x0F;  	  // pas besoin de décalage. garder juste le dernier digit
+	digA = Conv_hexToAsc(digH);
+	TrameEnvoi[12] = digA;
+
+	Serial.print("Trame = ");
+	// boucle pour envoyer une trame vers la passerelle
+	CheckSum = 0;
+	// envoi des 'SIZE_ENVOI' premiers octets
+	for (n = 0; n < SIZE_ENVOI; n++) {
+  	  Serial.print(TrameEnvoi[n]);
+  	  Serial1.print(TrameEnvoi[n]);
+  	  CheckSum = CheckSum + TrameEnvoi[n];
+	}
+	digH = (CheckSum >> 4) & 0x0F;	// poid fort du CheckSum
+	digA = Conv_hexToAsc(digH);
+	Serial.print(digA);  			  // envoi du poid fort
+	Serial1.print(digA);
+	digH = CheckSum & 0x0F;  		  // poid faible du CheckSum
+	digA = Conv_hexToAsc(digH);
+	Serial.print(digA);  			  // envoi du poid faible
+	Serial1.print(digA);
+	Serial.println();  	  // retour à la ligne
+}
+
+//---------------------------------
+char	Conv_hexToAsc(char digH)
+//---------------------------------
+{	char valAsc;
+
+	digH &= 0x0F;  	  // garder que les 4 bits de poid faible = 1 chiffre hexa (0 à 15)
+	valAsc = digH + 0x30;
+	if (digH > 9)
+  	  valAsc += 0x07;
+	return valAsc;
+}
+
+//---------------------------------
+void	Recep_Trame()
+//---------------------------------
+{
+  int n = 0;
+  while(n<SIZE_RECEP){    
+
+	if(Serial1.available()>0){
+  	TrameRecep[n] = Serial1.read();
+  	n=n+1;
+	}
+    
+ 
+   
+  }
+}
+
+//---------------------------------
+void   Analyse_Trame(int valcapt)
+//---------------------------------
+{
+//#define TRA 0 //type de trame offset  0
+//#define OBJ 1  //numero de lobjet offset 1, longueur 4 octets
+#define REQ 5 //type de requête offset 5 doit valoir 2 si ça vient du site
+#define TYP 6 //type de capteur offset 6 ça dépend du site
+//#define NUM 7 //numero du capteur offset 7
+
+	if (TrameRecep[REQ] == '2') { // ascii car vient du site
+		  if (TrameRecep[TYP]=='a') { // si on reçoit la commande d'allumage
+            	int elec=((valcapt*5)/4095);
+            	if(valcapt < 1000){
+              	Serial.println("Moteur allumé");
+  		  digitalWrite(MOT1,HIGH);//on alimente le port défini en 33
+  		  digitalWrite(MOT2,LOW);// l'autre port n'est pas alimenté
+  		  digitalWrite(LED1,HIGH);
+  		  digitalWrite(LED2,LOW);
+  		  digitalWrite(LED3,LOW);
+  		 // digitalWrite(LED4,LOW);
+  		  digitalWrite(LED5,LOW);
+   
+             	alpha2= 5;
+              	}
+             	else
+             	{
+              	 
+              	 
+             	}
+  		 
+     	 
+		  }
+		  else if (TrameRecep[TYP]=='H'){
+             	if(valcapt < 1000){
+   		  Serial.println("LED1 allumé");
+  		  digitalWrite(LED1,LOW);//on alimente le port défini en 33
+       		 digitalWrite(MOT1,LOW);
+  		  digitalWrite(MOT2,HIGH);// l'autre port n'est pas alimenté
+  			  digitalWrite(LED2,HIGH);
+  		  digitalWrite(LED3,HIGH);
+  		  digitalWrite(LED4,LOW);
+  		  digitalWrite(LED5,LOW);
+             	alpha2= 6;}
+		  }  
+		  else { // tout ce qui n'est pas une commande "allumer" éteint
+  		  Serial.println("Moteur eteint");
+  		  digitalWrite(LED1,LOW);
+  		  digitalWrite(MOT1,LOW); // sinon on l'éteint
+  		  digitalWrite(MOT2,LOW);
+  		  digitalWrite(LED2,LOW);
+  		  digitalWrite(LED3,LOW);
+  		  digitalWrite(LED4,HIGH);
+  		  digitalWrite(LED5,HIGH);
+          		   alpha2=0;    
+		  }
+   }
+}
+
+//---------------------------------
+int   Deverouillage_Trame()
+//---------------------------------
+{
+//#define TRA 0 //type de trame offset  0
+//#define OBJ 1  //numero de lobjet offset 1, longueur 4 octets
+#define REQ 5 //type de requête offset 5 doit valoir 2 si ça vient du site
+#define TYP 6 //type de capteur offset 6 ça dépend du site
+#define NUM1 7 //numero du capteur offset 7
+#define NUM2 8
+#define VAL1 9
+#define VAL2 10
+#define VAL3 11
+#define VAL4 12
+
+	if (TrameRecep[REQ] == '2') { // ascii car vient du site
+		  if (TrameRecep[TYP]=='p') { // si on reçoit la commande d'allumage
+  		  if (TrameRecep[NUM1]=='0') {
+   	  if (TrameRecep[NUM2]=='1') {
+   	  if (TrameRecep[VAL1]=='1') {
+   	  if (TrameRecep[VAL2]=='9') {
+   	  if (TrameRecep[VAL3]=='9') {
+   	  if (TrameRecep[VAL4]=='7') {
+   	  return 1;
+   	  }
+   	  }
+   	  }
+   	  }
+   	  }
+   	  }
+     	 
+		  }
+   	  else {
+   	  return 0;
+   	  }
+		 
+   	 
+   }
+   
+}
+//------------------------------
+void filtretest (int valeur)
+//------------------------------
+{
+if (valeur > LIMFILTRE)
+{
+   		  Serial.println("Seuil à la sortie du filtre detecté ");
+ 		  digitalWrite(LED1,HIGH);
+  		  digitalWrite(LED2,HIGH);
+  		  digitalWrite(LED3,HIGH);
+  		  digitalWrite(LED4,HIGH);
+  		  digitalWrite(LED5,HIGH);
+
+}
+else {
+
+   		  Serial.println("Seuil à la sortie du filtre non detecté ");
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+

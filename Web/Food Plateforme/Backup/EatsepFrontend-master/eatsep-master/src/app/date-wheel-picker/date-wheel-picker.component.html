@@ -1,0 +1,5 @@
+<div ngClass="card">
+    <ul [className]="'list-month ' + currentMonth">
+      <li ngClass="month" *ngFor= "let month of months" (click)="changeMonth(month)" >{{month}}</li>
+   </ul>
+  </div>

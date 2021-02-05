@@ -1,0 +1,266 @@
+body{
+    background-color: #34495E;
+    color: white;
+}
+
+
+#subscription{
+    align-items: center;
+    margin: 3% 3%;
+}
+
+#account {
+    margin-bottom: 3%;
+}
+
+.list_inputs{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.li_input{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 3vw;
+    margin: 1vw;
+}
+.inscri_input{
+    width:50%;
+    background-color: #34495e;
+    border: 2px solid #3498db;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.5vw;
+    margin-top:3%;
+    margin-left:15%;
+    color: white;
+}
+
+.inscri_input:focus{
+    border: 2px solid white;
+    box-shadow: 0 0 10px white;
+}
+
+
+h1{
+    width: 100%;
+    text-align:center;
+    padding: 0;
+    margin: 0;
+}
+
+h2{
+    text-align:center;
+    margin: 10px;
+    padding:0;
+}
+
+
+#container{
+    justify-content: center;
+    margin-top: 3%;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+#accountContainer{
+    height: 15em;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#bills{
+    display: inline-block;
+    margin: 1% 10% 0px 5%;
+    height: 10em;
+    width: 80%;
+}
+
+a{
+    color: white;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+ul{
+    margin-top: 0;
+    margin-left: 15%;
+    list-style: none;
+}
+
+p{
+    text-align: center;
+}
+
+.button {
+    background-color: #3498db;
+    color:  white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 3%;
+    padding: 20px 50px;
+    border-radius:20px;
+    border: solid;
+    border-color: #3498db;
+    font-size: larger;
+    margin-right: 20%;
+}
+
+.button:hover {
+    background-color: white;
+    color: #3498db;
+    border-color: white;
+}
+
+img{
+    width: 30em;
+    height: auto;
+}
+
+#payment{
+    display: inline-block;
+    justify-items: flex-start;
+    align-items: center;
+}
+
+.button-home {
+    width: 20%;
+    height: 8%;
+    background-color: #3498db;
+    color:  white;
+    text-align: center;
+    text-decoration: none;
+    border-radius:20px;
+    border: solid;
+    border-color: #3498db;
+    font-size: larger;
+    margin-right: 1%;
+}
+
+.button-home:hover {
+    background-color: white;
+    color: #3498db;
+    border-color: white;
+}
+
+#home {
+    text-align: center;
+    margin: 3% 3%;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    background-color: white;
+    text-align: center;
+}
+
+.modal-header h2 {
+    text-align: left;
+}
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.input {
+    border: none;
+    font-size: large;
+    border-bottom: solid 2px gray;
+    width: 30%;
+    margin-bottom: 2%;
+    transition-property: all;
+    transition-duration: 0.1s;
+}
+
+.input:focus {
+    border-bottom: solid 3px #3498db;
+    font-size: larger;
+    text-align: right;
+}
+
+
+.input_select {
+    border: none;
+    font-size: large;
+    border-bottom: solid 2px gray;
+    width: 30%;
+    margin-bottom: 2%;
+    background-color: white;
+    color: grey;
+}
+
+.input_select:focus {
+    border-bottom: solid 3px #3498db;
+    font-size: larger;
+}
+
+.submit {
+    text-align: center;
+    width: 15vw;
+    height: 3vw;
+    background-color: #3498db;
+    border: solid 2px #3498db;
+    border-radius: 15px;
+    margin-top: 3%;
+    color: white;
+    font-weight: bold;
+    font-size: 2vw;
+    padding: 5px;
+}
+
+.submit:hover{
+    background-color: white;
+    color: #3498db;
+    border-color: #3498db;
+}
+
+
+in
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+

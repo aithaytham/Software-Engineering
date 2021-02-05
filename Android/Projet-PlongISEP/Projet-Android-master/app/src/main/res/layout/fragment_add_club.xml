@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".FragmentAddClub">
+
+    <TextView
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@string/add_club"
+            android:textSize="20sp"
+            android:id="@+id/addclubtitle"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="30dp"/>
+    <EditText
+            android:layout_width="395dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Nom du club"
+            android:textAlignment="center"
+            android:ems="10"
+            android:id="@+id/nomclub"
+            tools:layout_editor_absoluteX="8dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="132dp"/>
+    <EditText
+            android:textAlignment="center"
+            android:layout_width="395dp"
+            android:layout_height="60dp"
+            android:inputType="textPersonName"
+            android:hint="Description"
+            android:ems="10"
+            android:id="@+id/descriptionclub"
+            tools:layout_editor_absoluteX="8dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="179dp"/>
+    <EditText
+            android:textAlignment="center"
+            android:layout_width="169dp"
+            android:layout_height="60dp"
+            android:inputType="textPersonName"
+            android:hint="Localisation"
+            android:ems="10"
+            android:id="@+id/localisationclub"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="258dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="121dp"/>
+    <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingBar3"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="472dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="86dp"/>
+    <RadioGroup
+            android:layout_width="260dp"
+            android:layout_height="33dp"
+            android:orientation="horizontal" android:id="@+id/radioGroup4"
+            app:layout_constraintTop_toBottomOf="@+id/localisationclub"
+            android:layout_marginBottom="20dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textView2" android:layout_marginEnd="57dp"
+    >
+        <RadioButton
+                android:text="FFESSM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/radioButton" android:layout_weight="1"/>
+        <RadioButton
+                android:text="PADI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/radioButton2" android:layout_weight="1"/>
+    </RadioGroup>
+    <Button
+            android:text="VALIDER"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button2"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="557dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="162dp"/>
+    <TextView
+            android:text="Notez le club"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="432dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="165dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

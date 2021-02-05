@@ -1,0 +1,30 @@
+J'ai choisi la marque Starbucks qui a 29% de tweet positif des 200 tweets qui contienne le mot 
+Concernant le choix du nombre de tweet dans le code j'ai decidé de passer par l'api de twitter pour avoir les derniers tweets géneré et grâce à ça on peut selectionné le nombre de fois que le mot resort grâce à la ligne:
+
+tweets = api.get_tweets(query = 'Starbucks', count = 200)
+
+Ce qu'on a en sorti du code : 
+
+Positive tweets percentage: 29.23076923076923 %
+Negative tweets percentage: 10.76923076923077 %
+Neutral tweets percentage: 60.0 % \ 
+
+
+Positive tweets:
+RT @Khantheprince_: Government should make more library that contain cafe or food stall by collaborating with other companies like tealive…
+this girl who was originally sitting across from me at Starbucks relocated to the other side of the room and then a… https://t.co/THGEU7Y1N7
+RT @disefendisi: malesef ülke de çok kötü bir gençlik olustu. cebindeki 15-20 tl ile starbucks, carribou,soulmate türü kahvecilere veya mek…
+@dansbiep ITS REALLY GOOD mine is from starbucks
+Everything relates to BTS it’s always comes with the 1st thing I had. Same goes with Starbucks stuff it was my first collection from sbux
+
+
+Negative tweets:
+RT @skankerdoodle1: *at starbucks*
+me:  https://t.co/FfhzRtxuWZ
+RT @Onrickk: *at Starbucks*
+Barista: Nitro Cold brew for “A Liar”
+
+Rihanna: https://t.co/iaxkHaQnRg
+Officially boycotting the target Starbucks because it sucks so much
+RT @stafane__: ????????????????????? starbucks ???????????????????????????????????????????????????????????? cold foam ?????????????????? ht…
+just found out the empty shop across from my work will not be turning into a starbucks. might as well kill myself now

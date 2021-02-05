@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:id="@+id/rechercheview"
+            android:layout_marginStart="0dp" android:layout_alignParentTop="true" android:layout_marginTop="98dp">
+    </SearchView>
+    <fragment
+        android:id="@+id/autocomplete_support_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.example.projetand.Recherche"/>
+
+
+    <TextView
+            android:hint="@string/recherche"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView3" android:layout_weight="1"
+            android:layout_alignParentStart="true" android:layout_marginTop="69dp" android:layout_marginStart="0dp"
+            android:layout_alignParentTop="true"/>
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="523dp" android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp" android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp"/>
+</RelativeLayout>

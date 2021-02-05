@@ -1,0 +1,22 @@
+{
+  "name": "eatsep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "~1.10.1",
+    "cookie-session": "~1.1.0",
+    "cors": "^2.8.5",
+    "ejs": "~2.1.4",
+    "express": "^4.16.4",
+    "js-sha512": "^0.8.0",
+    "mongoose": "^5.5.8",
+    "socket.io": "^2.2.0"
+  }
+}
